@@ -15,6 +15,7 @@ import lombok.Setter;
 public class Formation extends BaseEntity {
     @Column(nullable = false)
 	private String titre;
+    @Column(nullable = false)
 	private double prix;
 	private int Duree;
 }
