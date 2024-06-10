@@ -1,6 +1,7 @@
 package com.example.demo.Entity;
 
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -8,6 +9,8 @@ import org.hibernate.annotations.OnDeleteAction;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
@@ -45,5 +48,7 @@ public class Employee extends BaseEntity {
     @OneToOne (mappedBy ="employee", cascade = CascadeType.ALL)
     private BankDetails bankDetails;
     
+    @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE} , fetch = FetchType.EAGER)
+    private Set<Formation> formations;
 
 }
