@@ -4,6 +4,8 @@ import java.sql.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
@@ -26,4 +28,6 @@ public class Conge extends BaseEntity{
     private Date debut;
     @Positive
     private int duree;
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    private Employee employee;
 }
