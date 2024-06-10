@@ -18,7 +18,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Conge extends BaseEntity{
-
+    @Column(nullable = false)
     private String description;
     @Column(columnDefinition = "varchar(30) default 'en attente'")
     private String etat;
