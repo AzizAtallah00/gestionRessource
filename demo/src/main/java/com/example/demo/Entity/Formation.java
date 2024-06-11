@@ -20,7 +20,7 @@ public class Formation extends BaseEntity {
 	private String titre;
     @Column(nullable = false)
 	private double prix;
-	private int Duree;
+	private int duree;
 
     //relationship between entities
     @ManyToMany (mappedBy = "formations")
